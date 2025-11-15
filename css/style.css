@@ -1,0 +1,472 @@
+/* Global base */
+
+:root {
+  --whimsy-bg: #05020a;
+  --whimsy-bg-alt: #0b0616;
+  --whimsy-card: #18102a;
+  --whimsy-card-soft: #1f1234;
+  --whimsy-border: #312047;
+  --whimsy-text: #f5f0ff;
+  --whimsy-muted: #c0b3e6;
+  --whimsy-accent: #d8b4ff;
+  --whimsy-accent-soft: #f5e1ff;
+  --whimsy-accent-strong: #ff7ad9;
+  --whimsy-danger: #ff4b6e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, #2b1144 0, transparent 55%),
+    radial-gradient(circle at bottom right, #240b36 0, transparent 55%),
+    var(--whimsy-bg);
+  color: var(--whimsy-text);
+}
+
+a {
+  color: var(--whimsy-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--whimsy-accent-soft);
+  text-decoration: underline;
+}
+
+/* Navbar */
+
+.navbar {
+  background: rgba(5, 2, 15, 0.98);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(114, 74, 173, 0.35);
+}
+
+.navbar-brand img {
+  height: 90px;
+  width: auto;
+}
+
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--whimsy-accent-soft) !important;
+}
+
+/* Sections */
+
+.section {
+  padding: 6rem 0 4rem;
+}
+
+.section-narrow {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--whimsy-muted);
+  margin-bottom: 0.4rem;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.section-desc {
+  color: var(--whimsy-muted);
+  max-width: 48rem;
+}
+
+/* Cards */
+
+.card-whimsy {
+  background: radial-gradient(circle at top left, #26133f, #14081f 58%);
+  border-radius: 22px;
+  padding: 1.6rem 1.7rem;
+  border: 1px solid rgba(165, 120, 255, 0.4);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(7, 3, 16, 0.85);
+  color: var(--whimsy-text);
+  margin-bottom: 20px;
+}
+
+.card-whimsy h3,
+.card-whimsy h5 {
+  margin-bottom: 0.75rem;
+}
+
+.card-whimsy ul {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
+
+.card-whimsy li + li {
+  margin-top: 0.35rem;
+}
+
+/* Buttons */
+
+.btn-whimsy-primary {
+  background: linear-gradient(135deg, #ff7ad9, #b892ff);
+  border: none;
+  color: #220824;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.6rem 1.6rem;
+  box-shadow: 0 10px 30px rgba(223, 123, 255, 0.4);
+}
+
+.btn-whimsy-primary:hover {
+  color: #220824;
+  filter: brightness(1.05);
+}
+
+.btn-whimsy-outline {
+  border-radius: 999px;
+  border: 1px solid var(--whimsy-accent);
+  color: var(--whimsy-accent-soft);
+  padding: 0.55rem 1.5rem;
+  font-weight: 500;
+}
+
+.btn-whimsy-outline:hover {
+  background: rgba(216, 180, 255, 0.12);
+  color: var(--whimsy-accent-soft);
+}
+
+/* Hero About */
+
+.hero-about {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 2.4rem 2rem;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 176, 255, 0.22), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(116, 178, 255, 0.18), transparent 55%),
+    #14051e;
+  border: 1px solid rgba(210, 170, 255, 0.5);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(40, 13, 70, 0.9);
+}
+
+.hero-about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hero-about-heading {
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  margin-bottom: 0.15rem;
+}
+
+.hero-about-subtitle {
+  color: var(--whimsy-accent-soft);
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.hero-about-body {
+  color: var(--whimsy-muted);
+  max-width: 36rem;
+}
+
+.hero-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
+.hero-chip {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(234, 211, 255, 0.7);
+  background: rgba(10, 2, 24, 0.8);
+  color: var(--whimsy-accent-soft);
+}
+
+.hero-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.hero-about-side {
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-highlight {
+  background: radial-gradient(circle at top left, #2b1749, #12081f 60%);
+  border-radius: 20px;
+  padding: 1.4rem 1.3rem;
+  border: 1px solid rgba(185, 142, 255, 0.6);
+  width: 100%;
+}
+
+.hero-highlight-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--whimsy-muted);
+  margin-bottom: 0.4rem;
+}
+
+.hero-highlight-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hero-highlight-list li + li {
+  margin-top: 0.3rem;
+}
+
+/* About layout */
+
+.about-layout {
+  margin-top: 0.75rem;
+}
+
+.about-card {
+  height: 100%;
+}
+
+.about-card-heading {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--whimsy-muted);
+}
+
+/* Social icons */
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-icon {
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--whimsy-accent);
+  transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease;
+}
+
+.social-icon svg:hover {
+  transform: scale(1.15);
+  color: var(--whimsy-accent-soft);
+  filter: drop-shadow(0 0 6px rgba(208, 160, 255, 0.75));
+}
+
+/* Gallery (images + videos) */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-item {
+  background: radial-gradient(circle at top left, #26133f, #14081f 60%);
+  border-radius: 22px;
+  padding: 0.9rem;
+  border: 1px solid rgba(165, 120, 255, 0.45);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(10, 4, 22, 0.9);
+}
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.gallery-item video {
+  height: 420px;            /* force consistent video size */
+  object-fit: cover;
+}
+
+/* Simple image styling for gallery thumbs */
+.gallery-img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Video grid to match the photo grid feel */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card wrapper for each video */
+.video-wrapper {
+  background: radial-gradient(circle at top left, #26133f, #14081f 60%);
+  border-radius: 22px;
+  padding: 0.8rem;
+  border: 1px solid rgba(165, 120, 255, 0.45);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(10, 4, 22, 0.9);
+  position: relative;
+}
+
+/* Make all gallery videos the same size */
+.video-wrapper video {
+  width: 100%;
+  height: 360px;        /* tweak to taste: 320–420px works well */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Force all gallery images to be the same size */
+.gallery-img {
+  width: 100%;
+  height: 360px;          /* adjust this height to whatever looks best */
+  object-fit: cover;      /* crops but keeps image centered */
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+}
+
+
+/* Hidden SEO text under videos/images */
+.seo-hidden,
+.seo-text-hidden,
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Contact form basics (if used) */
+
+.contact-card {
+  max-width: 720px;
+  margin: 1.5rem auto 0;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  font-size: 0.88rem;
+  color: var(--whimsy-muted);
+  border-top: 1px solid rgba(114, 74, 173, 0.4);
+  background: radial-gradient(circle at top, #14051f 0, #05020a 55%);
+}
+
+/* Restore hero background image */
+.hero-bg {
+    background: url("../img/gallery-04.jpeg") center center/cover no-repeat;
+    position: relative;
+    padding-bottom: 80px; /* optional, matches your previous spacing */
+}
+
+/* Darken image slightly so text stays readable */
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+.hero-bg .section-narrow,
+.hero-bg .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Make the title match the logo color */
+.hero-title {
+    color: #C54FFF !important;  /* adjust if your logo is a slightly different purple */
+}
+
+
+/* Responsive tweaks */
+
+@media (max-width: 991.98px) {
+  .hero-about {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 2rem 1.4rem;
+  }
+
+  .hero-about-side {
+    order: -1;
+  }
+
+  .hero-highlight {
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding-top: 5.2rem;
+  }
+
+  .hero-about-heading {
+    font-size: 1.9rem;
+  }
+
+  .card-whimsy {
+    padding: 1.3rem 1.2rem;
+  }
+}
