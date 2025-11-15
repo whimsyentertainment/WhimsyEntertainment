@@ -58,47 +58,50 @@
           </div>
 
           <!-- CONTACT FORM -->
-          <form id="whimsyForm">
-            <input type="hidden" name="_subject" value="New Whimsy Entertainment inquiry">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+         <form id="whimsyForm" action="https://formsubmit.co/neonravee@yahoo.com" method="POST">
+  <input type="hidden" name="_subject" value="New Whimsy Entertainment inquiry">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
-            <div class="mb-3">
-              <label class="form-label">Your Name *</label>
-              <input type="text" name="Name" class="form-control" required>
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Your Name *</label>
+    <input type="text" name="Name" class="form-control" required>
+  </div>
 
-            <div class="mb-3">
-              <label class="form-label">Email Address *</label>
-              <input type="email" name="Email" class="form-control" required>
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Email Address *</label>
+    <input type="email" name="Email" class="form-control" required>
+  </div>
 
-            <div class="mb-3">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" name="Phone" class="form-control">
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Phone Number</label>
+    <input type="tel" name="Phone" class="form-control">
+  </div>
 
-            <div class="mb-3">
-              <label class="form-label">Event Date</label>
-              <input type="date" name="Event Date" class="form-control">
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Event Date</label>
+    <input type="date" name="Event Date" class="form-control">
+  </div>
 
-            <div class="mb-3">
-              <label class="form-label">Event Location</label>
-              <input type="text" name="Event Location" class="form-control">
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Event Location</label>
+    <input type="text" name="Event Location" class="form-control">
+  </div>
 
-            <div class="mb-3">
-              <label class="form-label">Type of Entertainment</label>
-              <input type="text" name="Entertainment Type" class="form-control" placeholder="Balloons, bubbles, face paint, fire, etc.">
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Type of Entertainment</label>
+    <input type="text" name="Entertainment Type" class="form-control" placeholder="Balloons, bubbles, face paint, fire, etc.">
+  </div>
 
-            <div class="mb-3">
-              <label class="form-label">Additional Details</label>
-              <textarea name="Details" class="form-control" rows="4" placeholder="Tell us about your event"></textarea>
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Additional Details</label>
+    <textarea name="Details" class="form-control" rows="4" placeholder="Tell us about your event"></textarea>
+  </div>
 
-            <button type="submit" class="btn btn-whimsy-primary w-100">Contact Us</button>
+  <button type="submit" class="btn btn-whimsy-primary w-100">Contact Us</button>
+</form>
+
+
           </form>
           <!-- END FORM -->
 
@@ -117,25 +120,11 @@
 
 <!-- AJAX SUBMISSION LOGIC -->
 <script>
-document.getElementById("whimsyForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
 
-    const form = e.target;
-    const thankYou = document.getElementById("thankYouMessage");
-
-    const formData = new FormData(form);
-
-    // SEND FORM VIA FORMSUBMIT
-    await fetch("https://formsubmit.co/neonravee@yahoo.com", {
-        method: "POST",
-        body: formData
-    });
-
-    // HIDE FORM + SHOW THANK YOU MESSAGE
-    form.style.display = "none";
-    thankYou.style.display = "block";
-});
-</script>
+<script>
+document.getElementById("whimsyForm").addEventListener("submit", function() {
+    document.getElementById("whimsyForm").style.display = "none";
+    document.getElementById("thankYouMessage").style.display = "block";
 
 </body>
 </html>
