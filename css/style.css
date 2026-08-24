@@ -369,6 +369,19 @@ a:hover {
   border-radius: 16px;
 }
 
+.video-wrapper iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Keep the vertical spring promo fully visible instead of cropping it. */
+.video-wrapper video.promo-video {
+  object-fit: contain;
+  background: #07030d;
+}
+
 /* Force all gallery images to be the same size */
 .gallery-img {
   width: 100%;
@@ -379,6 +392,12 @@ a:hover {
   display: block;
 }
 
+
+/* Homepage featured gallery video: match photo tile size while keeping the full vertical flyer visible. */
+.gallery-video {
+  object-fit: contain;
+  background: #07030d;
+}
 
 /* Hidden SEO text under videos/images */
 .seo-hidden,
