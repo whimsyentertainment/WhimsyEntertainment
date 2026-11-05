@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whimsy-entertainment.com/sitemap.xml
